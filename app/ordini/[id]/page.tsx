@@ -6,6 +6,10 @@ export function getOrderById(id: string): OrderWithDeliverySite | undefined {
   return getCustomerOrders(CURRENT_CUSTOMER_ID).find((order) => order.id === id);
 }
 
+export function generateStaticParams() {
+  return getCustomerOrders(CURRENT_CUSTOMER_ID).map((order) => ({ id: order.id }));
+}
+
 export default async function OrdineDettaglioPage({
   params,
 }: {
