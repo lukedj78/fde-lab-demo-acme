@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { formatOrderTotal } from "@/lib/format-order-total";
 
 export default function Home() {
@@ -9,6 +10,11 @@ export default function Home() {
         Pagina segnaposto di una demo.
       </p>
       <p className="mt-4">Esempio di totale ordine: {formatOrderTotal(1234567)}</p>
+      <p className="mt-4">
+        <Link href="/ordini" className="font-medium text-blue-600 hover:underline">
+          Vai ai miei ordini
+        </Link>
+      </p>
     </main>
   );
 }
